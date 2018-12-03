@@ -61,7 +61,7 @@ class BookList extends React.Component<IProps> {
                     console.log(this.props.nama)
                     return (<ul> {data.books.map(book => {
                         return(
-                            <li key={book.id} value={book.id} onClick={() => this.handleClick(book)}> {book.name} </li>
+                            <li key={book.id} value={book.id} onClick={this.handleClick}> {book.name} </li>
                         )
                     })} </ul>)
                 }}
