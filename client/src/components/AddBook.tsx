@@ -33,8 +33,8 @@ class AddBook extends React.Component {
         authorId : ''
     }
 
-    public submitForm(e : React.FormEvent, addBook : any){
-        e.preventDefault()
+    public submitForm = (event : React.SyntheticEvent, addBook : any) : void => {
+        event.preventDefault()
         addBook({
             variables : {
                 name : this.state.name,
@@ -66,9 +66,10 @@ class AddBook extends React.Component {
         return(
             <Mutation mutation={addBookMutation}>
             {(addBook) => {
+                const onSubmitBook = (e : any) => this.submitForm(e, addBook) 
                 console.log(addBook)
                 return(
-                        <form onSubmit={(e) => this.submitForm(e, addBook)}>
+                        <form onSubmit={onSubmitBook}>
 
                         <div className='field'>
                             <label htmlFor="name"> Book Name :  </label>
