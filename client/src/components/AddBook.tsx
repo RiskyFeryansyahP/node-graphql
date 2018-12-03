@@ -66,6 +66,7 @@ class AddBook extends React.Component {
         return(
             <Mutation mutation={addBookMutation}>
             {(addBook) => {
+                // menggunakan onSubmitBook variabel agar tidak terkena warning jsx-no-lambda
                 const onSubmitBook = (e : any) => this.submitForm(e, addBook) 
                 console.log(addBook)
                 return(
